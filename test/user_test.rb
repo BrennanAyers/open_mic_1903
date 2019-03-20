@@ -16,6 +16,23 @@ class UserTest < Minitest::Test
 
   def test_it_has_argument_attributes
     assert_equal "Sal", @user.name
+  end
+
+  def test_it_starts_with_no_jokes
     assert_equal [], @user.jokes
+  end
+
+  def test_it_can_learn_one_joke
+    @user.learn(@joke_1)
+
+    assert_equal @joke_1, @user.jokes[0]
+  end
+
+  def test_it_can_learn_two_jokes
+    @user.learn(@joke_1)
+    @user.learn(@joke_2)
+
+    assert_equal @joke_2, @user.jokes[1]
+    assert_equal 2, @user.jokes.length
   end
 end
