@@ -4,7 +4,7 @@
 
 * Fork this Repository
 * Clone YOUR fork
-* Compete the activity below
+* Complete the activity below
 * Push your solution to your fork
 * Submit a pull request from your repository to the turingschool-examples repository
   * Your name should be the title of the PR
