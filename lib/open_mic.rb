@@ -7,5 +7,7 @@ class OpenMic
     @performers = []
   end
 
-
+  def welcome(comic)
+    @performers << comic
+  end
 end

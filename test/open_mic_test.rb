@@ -25,4 +25,15 @@ class OpenMicTest < Minitest::Test
   def test_it_starts_with_no_performers
     assert_equal [], @open_mic.performers
   end
+
+  def test_it_can_welcome_new_performers
+    @open_mic.welcome(@sal)
+
+    assert_equal @sal, @open_mic.performers[0]
+
+    @open_mic.welcome(@ali)
+
+    assert_equal @ali, @open_mic.performers[1]
+    assert_equal 2, @open_mic.performers.length
+  end
 end
