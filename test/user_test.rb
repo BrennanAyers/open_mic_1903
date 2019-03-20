@@ -37,7 +37,7 @@ class UserTest < Minitest::Test
     assert_equal 2, @sal.jokes.length
   end
 
-  def test_user_can_tell_one_joke_to_another_user
+  def test_it_can_tell_one_joke_to_another_user
     @sal.learn(@joke_1)
     @sal.learn(@joke_2)
 
@@ -48,7 +48,7 @@ class UserTest < Minitest::Test
     assert_equal @joke_1, @ali.jokes[0]
   end
 
-  def test_user_can_tell_multiple_jokes_to_another_user
+  def test_it_can_tell_multiple_jokes_to_another_user
     @sal.learn(@joke_1)
     @sal.learn(@joke_2)
 
@@ -61,4 +61,11 @@ class UserTest < Minitest::Test
     assert_equal 2, @ali.jokes.length
   end
 
+  def test_it_can_access_jokes_by_id
+    @ali.learn(@joke_1)
+    @ali.learn(@joke_2)
+
+    assert_equal @joke_1, @ali.joke_by_id(1)
+    assert_equal @joke_2, @ali.joke_by_id(2)
+  end
 end
