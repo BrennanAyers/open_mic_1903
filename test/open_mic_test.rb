@@ -21,4 +21,8 @@ class OpenMicTest < Minitest::Test
     assert_equal "Comedy Works", @open_mic.location
     assert_equal "11-20-19", @open_mic.date
   end
+
+  def test_it_starts_with_no_performers
+    assert_equal [], @open_mic.performers
+  end
 end
