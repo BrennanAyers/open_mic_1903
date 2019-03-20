@@ -10,4 +10,8 @@ class OpenMic
   def welcome(comic)
     @performers << comic
   end
+
+  def repeated_jokes?
+    false
+  end
 end

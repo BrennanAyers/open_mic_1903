@@ -36,4 +36,8 @@ class OpenMicTest < Minitest::Test
     assert_equal @ali, @open_mic.performers[1]
     assert_equal 2, @open_mic.performers.length
   end
+
+  def test_it_does_not_start_with_repeated_jokes
+    refute @open_mic.repeated_jokes?
+  end
 end
