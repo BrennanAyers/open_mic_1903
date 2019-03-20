@@ -40,4 +40,15 @@ class OpenMicTest < Minitest::Test
   def test_it_does_not_start_with_repeated_jokes
     refute @open_mic.repeated_jokes?
   end
+
+  def test_it_knows_when_a_joke_has_been_repeated
+    @sal.learn(@joke_1)
+    @ali.learn(@joke_1)
+    @open_mic.welcome(@sal)
+    @open_mic.welcome(@ali)
+    @sal.tell(@ali, @joke_1)
+    @ali.tell(@sal, @joke_1)
+
+    assert @open_mic.repeated_jokes?
+  end
 end
